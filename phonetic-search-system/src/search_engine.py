@@ -58,15 +58,15 @@ class PhoneticSearchEngine:
     def set_encoder(self, encoder: PhoneticEncoder):
         """Change encoding strategy (Strategy Pattern)"""
         self.encoder = encoder
-
+    
     def save_all(self, prefix="models/phonetic"):
-    self.vector_db.save(f"{prefix}_faiss.index")
-    save_model(self.embedding_gen, f"{prefix}_embeddings.pkl")
-    save_model(self.words, f"{prefix}_words.pkl")
-
-def load_all(self, prefix="models/phonetic"):
-    self.vector_db = VectorDatabase(500)
-    self.vector_db.load(f"{prefix}_faiss.index")
-    self.embedding_gen = load_model(f"{prefix}_embeddings.pkl")
-    self.words = load_model(f"{prefix}_words.pkl")
-    self.vector_db.word_map = self.words
+        self.vector_db.save(f"{prefix}_faiss.index")
+        save_model(self.embedding_gen, f"{prefix}_embeddings.pkl")
+        save_model(self.words, f"{prefix}_words.pkl")
+    
+    def load_all(self, prefix="models/phonetic"):
+        self.vector_db = VectorDatabase(500)
+        self.vector_db.load(f"{prefix}_faiss.index")
+        self.embedding_gen = load_model(f"{prefix}_embeddings.pkl")
+        self.words = load_model(f"{prefix}_words.pkl")
+        self.vector_db.word_map = self.words
