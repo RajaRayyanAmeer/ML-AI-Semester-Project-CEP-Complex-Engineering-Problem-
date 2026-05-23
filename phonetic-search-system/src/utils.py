@@ -23,7 +23,6 @@ def load_model(path: str):
         return pickle.load(f)
 
 def parse_cmudict(file_path: str) -> dict:
-    """Parse CMU dictionary into word->phonemes mapping"""
     word_phonemes = {}
     with open(file_path, 'r', encoding='latin-1') as f:
         for line in f:
@@ -33,6 +32,10 @@ def parse_cmudict(file_path: str) -> dict:
             if len(parts) < 2:
                 continue
             word = parts[0].split('(')[0].lower()
+            # Normalize: café -> cafe
+            word = word.encode('ascii', 'ignore').decode('ascii')
+            if not word:  # Skip only if empty
+                continue
             phonemes = ' '.join(parts[1:])
             word_phonemes[word] = phonemes
     return word_phonemes
