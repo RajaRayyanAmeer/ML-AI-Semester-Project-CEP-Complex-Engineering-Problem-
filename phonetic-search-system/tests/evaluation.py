@@ -1,4 +1,6 @@
-"""Evaluation script for phonetic search"""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.search_engine import PhoneticSearchEngine
 from src.utils import download_cmudict
 import pandas as pd
