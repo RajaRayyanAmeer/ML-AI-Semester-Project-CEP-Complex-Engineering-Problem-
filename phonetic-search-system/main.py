@@ -1,6 +1,6 @@
 """Main entry point"""
 from src.search_engine import PhoneticSearchEngine
-from src.phonetic_encoder import SoundexEncoder, MetaphoneEncoder
+from src.phonetic_encoder import SoundexEncoder, MetaphoneEncoder, PhonemeEncoder
 from src.utils import download_cmudict
 
 def main():
@@ -10,7 +10,7 @@ def main():
     
     # Initialize engine
     print("\nInitializing search engine...")
-    engine = PhoneticSearchEngine(encoder=SoundexEncoder())
+    engine = PhoneticSearchEngine()
     
     # Load and build
     engine.load_data(data_path)

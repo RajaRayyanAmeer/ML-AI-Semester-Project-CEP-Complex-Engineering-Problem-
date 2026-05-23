@@ -9,7 +9,7 @@ class PhoneticSearchEngine:
     """Main orchestrator following Open/Closed principle"""
     
     def __init__(self, encoder: PhoneticEncoder = None):
-        self.encoder = encoder or SoundexEncoder()
+        self.encoder = encoder or PhonemeEncoder({})
         self.embedding_gen = EmbeddingGenerator()
         self.vector_db = None
         self.cmu_dict = {}
@@ -19,6 +19,7 @@ class PhoneticSearchEngine:
         """Load and parse dictionary"""
         self.cmu_dict = parse_cmudict(dict_path)
         self.words = list(self.cmu_dict.keys())
+        self.encoder = PhonemeEncoder(self.cmu_dict)
         print(f"Loaded {len(self.words)} words")
     
     def build_index(self):
