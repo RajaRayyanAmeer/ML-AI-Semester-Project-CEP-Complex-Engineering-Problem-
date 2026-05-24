@@ -15,6 +15,7 @@ def main():
     # Load and build
     engine.load_data(data_path)
     engine.build_index()
+    engine.save_all("models/phonetic")
     
     # Interactive search
     print("Phonetic Search System Ready!")
