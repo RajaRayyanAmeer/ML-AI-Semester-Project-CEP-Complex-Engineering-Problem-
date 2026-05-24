@@ -1,0 +1,7 @@
+Statistic,Value
+Total Words in Database,"125,067"
+Vector Dimension,500 (TF-IDF features)
+Index Type,FAISS IndexFlatL2
+Average Search Time,44.86 ms
+Top-1 Accuracy,85.25%
+Top-10 Accuracy,100.00%
