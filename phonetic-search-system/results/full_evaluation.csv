@@ -1,0 +1,8 @@
+Metric,Value
+Retrieval Accuracy @1,85.25%
+Retrieval Accuracy @5,99.66%
+Retrieval Accuracy @10,100.00%
+Avg Distance (Top-1),0
+Avg Search Time (ms),44.86
+Total Words Tested,10000
+Database Size,125067
