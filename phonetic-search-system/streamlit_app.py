@@ -186,7 +186,7 @@ def load_engine():
     """Load search engine (singleton)"""
     with st.spinner("Loading phonetic search engine..."):
         engine = PhoneticSearchEngine()
-        engine.load_all("phonetic-search-system/models/phonetic")
+        engine.load_all("models/phonetic")
     return engine
 
 # APPLICATION ENTRY POINT
