@@ -6,6 +6,8 @@ from .embeddings import EmbeddingGenerator
 from .vector_db import VectorDatabase
 from .utils import parse_cmudict
 from .utils import save_model, load_model
+from .utils import parse_cmudict
+from .phonetic_encoder import PhonemeEncoder
 import numpy as np
 
 class PhoneticSearchEngine:
@@ -65,6 +67,11 @@ class PhoneticSearchEngine:
         save_model(self.words, f"{prefix}_words.pkl")
     
     def load_all(self, prefix="models/phonetic"):
+        # Load CMU dict first
+        self.cmu_dict = parse_cmudict("data/cmudict-0.7b.txt")
+        self.encoder = PhonemeEncoder(self.cmu_dict)
+
+        # Load saved models
         self.vector_db = VectorDatabase(500)
         self.vector_db.load(f"{prefix}_faiss.index")
         self.embedding_gen = load_model(f"{prefix}_embeddings.pkl")
