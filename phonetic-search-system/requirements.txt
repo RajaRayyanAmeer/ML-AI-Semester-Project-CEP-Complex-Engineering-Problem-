@@ -5,3 +5,4 @@ faiss-cpu==1.7.4
 fuzzy==1.2.2
 gensim==4.3.2
 requests==2.31.0
+streamlit==1.57.0
