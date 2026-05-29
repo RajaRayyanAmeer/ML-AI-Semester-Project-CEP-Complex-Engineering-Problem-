@@ -1,8 +1,9 @@
-gensim==4.3.2
-requests==2.31.0
 streamlit
 scikit-learn>=1.4.0
 pandas>=2.0.0
 numpy>=1.26.0
 faiss-cpu>=1.8.0
 fuzzy
+gensim
+matplotlib
+seaborn
