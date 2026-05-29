@@ -1,9 +1,9 @@
 streamlit
-scikit-learn>=1.4.0
+scikit-learn>=1.3.0
 pandas>=2.0.0
-numpy>=1.26.0
+numpy>=1.24.0
 faiss-cpu>=1.8.0
 fuzzy
-gensim
+gensim>=4.3.0
 matplotlib
 seaborn
