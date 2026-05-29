@@ -4,6 +4,5 @@ pandas>=2.0.0
 numpy>=1.24.0
 faiss-cpu>=1.8.0
 fuzzy
-gensim>=4.3.0
 matplotlib
 seaborn
