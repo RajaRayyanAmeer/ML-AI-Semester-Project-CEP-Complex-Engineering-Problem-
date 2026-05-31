@@ -5,7 +5,7 @@
 
 # ML&AI CEP: Phonetic Similarity Search System
 
-**Course:** CP-310 Machine Learning & AI | **Semester:** 6 | **Entry:** 23-CP-25 | **Instructor:** Dr. Waqar Ahmad
+**Course:** Machine Learning & AI | **Semester:** 6 | **Entry:** 23-CP-25 | **Instructor:** Dr. Waqar Ahmad
 
 A production-ready, AI-powered phonetic similarity search engine using CMU Pronouncing Dictionary, TF-IDF embeddings, and FAISS vector database. Built with SOLID principles and deployed on Streamlit Cloud.
 
@@ -81,7 +81,7 @@ streamlit run streamlit_app.py
 
 Browser opens at `http://localhost:8501`
 
-### REST AP
+### REST API
 ```bash
 python api.py  # Runs FastAPI on http://localhost:8000
 ```
@@ -207,10 +207,10 @@ Gensim is for:
 - Skip-gram, CBOW algorithms
 
 **Our system uses:**
-- ✅ `fuzzy` for Soundex/Metaphone phonetic encoding
-- ✅ `scikit-learn TF-IDF` for character n-gram embeddings
-- ✅ `FAISS` for vector similarity search
-- ✅ Custom CMU dictionary phoneme encoder
+-  `fuzzy` for Soundex/Metaphone phonetic encoding
+-  `scikit-learn TF-IDF` for character n-gram embeddings
+-  `FAISS` for vector similarity search
+-  Custom CMU dictionary phoneme encoder
 
 **Finding:** Gensim never imported, never used, completely unnecessary.
 
@@ -566,7 +566,7 @@ git lfs install
 git lfs pull
 ```
 
-## 🧪 Testing & Evaluation
+## Testing & Evaluation
 
 ### Run Full Evaluation
 ```bash
