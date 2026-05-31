@@ -3,6 +3,7 @@ from src.search_engine import PhoneticSearchEngine
 from abc import ABC, abstractmethod
 import pandas as pd
 import time
+import os
 
 # INTERFACES (DIP - Depend on abstractions)
 class ISearchService(ABC):
@@ -183,10 +184,16 @@ class PhoneticSearchApp:
 # DEPENDENCY INJECTION
 @st.cache_resource
 def load_engine():
+    # Absolute path to the folder streamlit_app.py lives in
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Point directly to the models folder inside that same directory
+    model_prefix = os.path.join(base_dir, "models", "phonetic")
+
     """Load search engine (singleton)"""
     with st.spinner("Loading phonetic search engine..."):
         engine = PhoneticSearchEngine()
-        engine.load_all("models/phonetic")
+        engine.load_all(model_prefix)
     return engine
 
 # APPLICATION ENTRY POINT
